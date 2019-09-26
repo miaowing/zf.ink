@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> metadata}}
+    <script src="/assets/jquery-3.3.1.min.js"></script>
+    <script src="/assets/scripts.js"></script>
+</head>
+<body class="page-front">
+{{> header}}
+<section id="content">
+    <div class="container">
+        {{> slogan}}
+
+        <div class="row">
+            <div class="left sticky">
+                <nav class="filters" data-target="posts">
+                    <a data-filter="all" class="active">All</a>
+                    {{#each categories}}
+                        <a data-filter="{{this}}">{{this}}</a>
+                    {{/each}}
+                </nav>
+            </div>
+            <div class="right">
+                <ul class="list collapsible with-thumbnails collapsed" id="posts">
+                    {{#each repositories}}
+                        <li data-filters="{{owner.login}}">
+                            <a class="post" href="{{svn_url}}" target="_blank">
+                                <div class="cover thumbnail"
+                                     style="background-image: url('{{owner.avatar_url}}')"></div>
+                                <div class="content">
+                                    <h3>{{full_name}}</h3>
+
+                                    <div class="meta">By {{owner.login}}
+                                        <time>{{dateFmt created_at}}</time>
+                                        <svg viewBox="0 0 14 16" width="14" height="16" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                  d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+                                        </svg>
+                                        {{stargazers_count}}
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+                <button class="button toggle margin-top">See all posts →</button>
+            </div>
+        </div>
+    </div>
+</section>
+{{> footer}}
+</body>
+</html>

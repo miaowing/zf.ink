@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> metadata}}
+    <script src="/assets/jquery-3.3.1.min.js"></script>
+    <script src="/assets/scripts.js"></script>
+</head>
+<body class="page-about">
+{{> header}}
+<section id="content">
+    <div class="container">
+        {{> slogan}}
+        <div></div>
+        <section class="row" id="information">
+            <div class="left">
+                <h2>Information</h2>
+            </div>
+            <div class="right">
+                {{{info.html}}}
+            </div>
+        </section>
+        <section class="row" id="works">
+            <div class="left">
+                <h2>Works</h2>
+            </div>
+            <div class="right">
+                {{{works.html}}}
+            </div>
+        </section>
+        <section class="row" id="works">
+            <div class="left">
+                <h2>Open Source</h2>
+            </div>
+            <div class="right">
+                {{{open.html}}}
+            </div>
+        </section>
+        <section class="row" id="works">
+            <div class="left">
+                <h2>PDF</h2>
+            </div>
+            <div class="right">
+                <div class="narrow">
+                    <a href="https://data.zf.ink/miaowing.pdf" target="_blank" class="button large">Download →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+{{> footer}}
+</body>
+</html>

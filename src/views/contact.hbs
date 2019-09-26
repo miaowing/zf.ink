@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> metadata}}
+    <script src="/assets/jquery-3.3.1.min.js"></script>
+    <script src="/assets/scripts.js"></script>
+</head>
+<body class="page-contact">
+{{> header}}
+<section id="content">
+    <div class="container">
+        {{> slogan}}
+
+        <section class="row" id="works">
+            <div class="left">
+                <h2>Send me a Message</h2>
+            </div>
+            <div class="right">
+                <form action="">
+                    <div class="form-group">
+                        <input class="form-control" formcontrolname="name" type="text">
+                        <label>Your Name *</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" formcontrolname="email" type="text">
+                        <label>Email Address *</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" formcontrolname="phone" type="text">
+                        <label>Phone *</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" formcontrolname="company" type="text">
+                        <label>Company</label>
+                    </div>
+                    <div class="form-group textarea">
+                        <input class="form-control" formcontrolname="msg" type="text">
+                        <label>Message *</label>
+                    </div>
+                    <div style="text-align: right;">
+                        <button class="button trigger" style="margin-right: 10px;" type="button">
+                            Clear form
+                        </button>
+                        <button class="button trigger" type="submit">
+                            Send message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</section>
+{{> footer}}
+</body>
+</html>

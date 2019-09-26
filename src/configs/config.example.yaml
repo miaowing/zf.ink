@@ -1,0 +1,15 @@
+service:
+  title: ZF.INK
+  externalUrl: https://zf.ink
+  port: 3000
+
+ghost:
+  url: https://blog.zf.ink
+  contentKey:
+  adminKey:
+
+
+github:
+  token:
+
+icp:

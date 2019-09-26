@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> metadata}}
+</head>
+<body class="page-front">
+{{> header}}
+<section id="content">
+    <div class="container">
+        {{> slogan}}
+
+        <section id="clients">
+            <ul>
+                {{#each organizations}}
+                    <li>
+                        <a href="https://github.com/{{login}}" target="_blank">
+                            <div class="image">
+                                <img src="{{avatar_url}}" alt="{{login}}"/>
+                            </div>
+                            <div class="content">
+                                <h3>{{login}}</h3>
+                                <div class="meta">{{description}}</div>
+                            </div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+
+        <section class="row">
+            <div class="right">
+                <p class="h2 thin">I’m an front-end software engineer, who loves challenges, newest technologies and
+                    programming at all. I have made projects for companies such as ksyun (KingSoft Cloud) and YanRong
+                    Tech.</p>
+                <a href="/about" class="button large">More →</a>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="left">
+                <h2>Latest Posts</h2>
+            </div>
+            <div class="right">
+                <ul class="list with-thumbnails" id="posts">
+                    {{#each posts}}
+                        <li>
+                            <a class="post" href="/blog/{{slug}}">
+                                <div class="cover thumbnail"
+                                     style="background-image: url({{image}})"></div>
+                                <div class="content">
+                                    <h3>{{title}}</h3>
+
+                                    <div class="meta">By miaowing
+                                        <time>{{dateFmt publishedAt}}</time>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+    </div>
+</section>
+{{> footer}}
+</body>
+</html>

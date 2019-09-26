@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> metadata}}
+    <link href="/assets/gitalk.css" rel="stylesheet" type="text/css">
+    <script src="/assets/jquery-3.3.1.min.js"></script>
+    <script src="/assets/qrcode.min.js"></script>
+    <script src="/assets/scripts.js"></script>
+    <script src="/assets/share.js"></script>
+    <script src="/assets/gitalk.min.js"></script>
+</head>
+<body class="type-posts">
+{{> header}}
+<section id="content">
+    <div class="container">
+        {{> slogan}}
+
+        {{#if image}}
+            <div class="cover two-by-one" style="background-image: url('{{image}}')"></div>
+        {{/if}}
+
+        <section class="body row">
+            <div class="right">
+                {{{post.html}}}
+                <div id="gitalk-container"></div>
+            </div>
+            <div class="left sticky narrow">
+                <div class="narrow">
+                    <div class="card">
+                        <div class="avatar cover" style="background-image: url('/assets/logo.jpeg')"></div>
+                        <div class="content">
+
+                            <strong>miaowing</strong><br>
+                            A Javascript &amp; Typescript developer
+                        </div>
+                    </div>
+                    <small>
+                        Posted on <span>{{dateFmt post.publishedAt}}</span>
+                    </small>
+                    <footer class="social">
+                        <button class="button trigger" rel="overlay-share">Share this post</button>
+                        <button class="button trigger" rel="overlay-follow">Follow me</button>
+                    </footer>
+                </div>
+                <div class="overlay red" id="overlay-share">
+                    <header class="header">
+                        <button class="icon close">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+                            </svg>
+                        </button>
+                    </header>
+                    <section class="body">
+                        <h2>Share this post</h2>
+                        <ul class="share grid-2 padded">
+                            <li>
+                                <a class="button large email centered full-width"
+                                   href="mailto:?body={{url}}/blog/{{post.slug}}/">Email</a>
+                            </li>
+                            <li>
+                                <a class="button large facebook centered full-width popup" target="_blank"
+                                   href="https://www.facebook.com/sharer/sharer.php?u={{url}}/blog/{{post.slug}}/">
+                                Facebook
+                                </a>
+                            </li>
+                            <li><a class="button large weibo centered full-width popup" target="_blank"
+                                   href="http://service.weibo.com/share/share.php?url={{url}}/blog/{{post.slug}}/&amp;title=@zfeng217%20 {{post.title}}
+                                &amp;pic={{post.feature_image}}&amp;dpc=1">Weibo</a>
+                            </li>
+                        </ul>
+                        <div class="wechat-share margin-top">
+                            <h3>Scan to open in WeChat</h3>
+                            <div class="wechat-code" title="{{url}}/blog/{{post.slug}}/?from=webqr"></div>
+                        </div>
+
+                    </section>
+                </div>
+                <div class="overlay red" id="overlay-follow">
+                    <header class="header">
+                        <button class="icon close">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+                            </svg>
+                        </button>
+                    </header>
+                    <section class="body">
+                        <h2>Stay tuned</h2>
+                        <p></p>
+                        <ul class="grid grid-2 padded">
+                            <li>
+                                <h3>Add me on WeChat</h3>
+                                <p><img style="width: 200px;" src="/assets/my-qrcode.png"></p>
+                            </li>
+                            <li>
+                                <h3>Subscribe to my newsletter</h3>
+                                <form action="" method="post" target="_blank" class="mailchimp" onsubmit="">
+                                    <div class="field floating full-width">
+                                        <input id="mailchimp-email" type="email" value="" name="EMAIL" required=""
+                                               placeholder="Your email address">
+                                        <label for="mailchimp-email">Your email address</label>
+                                    </div>
+                                    <div class="field full-width">
+                                        <label>
+                                            <input type="checkbox" value="" name="checkbox" required=""
+                                                   placeholder="Your consent">
+                                            <span>I confirm that I wish to receive emails from ZF INK <span></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="field full-width big-margin-top">
+                                        <input type="submit" value="Subscribe" name="subscribe" class="button large"
+                                               required="">
+                                    </div>
+                                    <input type="hidden" value="zf.ink" name="SOURCE">
+                                </form>
+
+                            </li>
+                        </ul>
+
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+{{> footer}}
+<script>
+    window.gitalk = new Gitalk({
+        clientID: '718172da62e389bce588',
+        clientSecret: '86b2714d2f94176bbfad3ce44b8c1cb36e38be28',
+        repo: 'zf.ink',
+        owner: 'miaowing',
+        admin: ['miaowing'],
+        id: "{{post.id}}",      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false,  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+</body>
+</html>

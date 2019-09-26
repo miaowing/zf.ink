@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> metadata}}
+    <script src="/assets/jquery-3.3.1.min.js"></script>
+    <script src="/assets/scripts.js"></script>
+</head>
+<body class="page-front">
+{{> header}}
+<section id="content">
+    <div class="container">
+        {{> slogan}}
+
+        <div class="row">
+            <div class="left sticky">
+                <nav class="filters" data-target="posts">
+                    <a data-filter="all" class="active">All</a>
+                    {{#each categories}}
+                        <a data-filter="{{this}}">{{this}}</a>
+                    {{/each}}
+                </nav>
+            </div>
+            <div class="right">
+                <ul class="list collapsible with-thumbnails collapsed" id="posts">
+                    {{#each posts}}
+                        <li data-filters="{{primaryTag}}">
+                            <a class="post" href="/blog/{{slug}}">
+                                <div class="cover thumbnail"
+                                     style="background-image: url('{{image}}')"></div>
+                                <div class="content">
+                                    <h3>{{title}}</h3>
+
+                                    <div class="meta">By miaowing
+                                        <time>{{dateFmt publishedAt}}</time>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+                <button class="button toggle margin-top">See all posts →</button>
+            </div>
+        </div>
+    </div>
+</section>
+{{> footer}}
+</body>
+</html>
