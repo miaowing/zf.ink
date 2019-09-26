@@ -74,7 +74,8 @@ export class RenderController {
     return {
       title: `About - ${this.title}`,
       url: this.extraService.getUrl(),
-      slogan: 'A JavaScript & TypeScript developer, love open source.',
+      slogan: 'I’m an front-end software engineer, who loves challenges, newest technologies and programming at all. ',
+      description: 'I have made projects for companies such as ksyun (KingSoft Cloud) and YanRong Tech.',
       icp: this.extraService.getICP(),
       info: collection.aboutInfo,
       works: collection.aboutWorks,
@@ -101,6 +102,17 @@ export class RenderController {
       title: `Project - ${this.title}`,
       url: this.extraService.getUrl(),
       slogan: 'My Projects',
+      icp: this.extraService.getICP(),
+    };
+  }
+
+  @Get('/links')
+  @Render('links')
+  async links() {
+    return {
+      title: `Project - ${this.title}`,
+      url: this.extraService.getUrl(),
+      slogan: 'Some other websites',
       icp: this.extraService.getICP(),
     };
   }

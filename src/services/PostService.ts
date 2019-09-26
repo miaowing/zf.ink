@@ -40,8 +40,8 @@ export class PostService implements OnModuleInit {
 
     const categories = [];
     posts = posts.map(post => {
-      const primaryTag = post.primary_tag ? post.primary_tag.name : '未分类';
-      if (!categories.includes(primaryTag)) {
+      const primaryTag = post.primary_tag ? post.primary_tag.name : '';
+      if (!categories.includes(primaryTag) && primaryTag) {
         categories.push(primaryTag);
       }
       return {
