@@ -32,7 +32,8 @@ export class RenderController {
     const collection = await this.githubService.getRepositoriesAndCategories();
     return {
       title: `Open Source - ${this.title}`,
-      slogan: 'Open Source Project',
+      slogan: 'My Open Source Project',
+      organizations: await this.githubService.getOrganizations(),
       repositories: collection.repositories,
       categories: collection.categories,
       icp: this.extraService.getICP(),
@@ -113,6 +114,17 @@ export class RenderController {
       title: `Project - ${this.title}`,
       url: this.extraService.getUrl(),
       slogan: 'Some other websites',
+      icp: this.extraService.getICP(),
+    };
+  }
+
+  @Get('/expertise')
+  @Render('expertise')
+  async expertise() {
+    return {
+      title: `网站定制 - ${this.title}`,
+      url: this.extraService.getUrl(),
+      slogan: '我们通过技术与设计，为您的网站、微信公众号、小程序等产品提供无限可能',
       icp: this.extraService.getICP(),
     };
   }

@@ -846,7 +846,18 @@ hr {
 
 .list.with-thumbnails .content {
     padding-left: 90px;
-    padding-top: 6px
+    padding-top: 6px;
+    position: relative;
+}
+
+.list.with-thumbnails .content .star {
+    position: absolute;
+    right: 0;
+}
+
+.list.with-thumbnails .content .star .star-icon {
+    position: relative;
+    top: 1px;
 }
 
 .list li {

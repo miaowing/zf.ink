@@ -1,5 +1,5 @@
 IMAGE_NAME=zfeng/zf.ink
-IMAGE_VERSION=0.0.1
+IMAGE_VERSION=0.0.2
 
 
 build:

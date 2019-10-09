@@ -11,6 +11,28 @@
     <div class="container">
         {{> slogan}}
 
+        <section class="row" id="staff">
+            <div class="left">
+                <h2>Organizations</h2>
+            </div>
+            <div class="right">
+                <ul class="grid">
+                    {{#each organizations}}
+                        <li>
+                            <div class="card">
+                                <div class="avatar cover"
+                                     style="background-image: url({{avatar_url}})"></div>
+                                <div class="content ellipsis">
+                                    <strong>{{login}}</strong><br>
+                                    <span title="{{description}}">{{description}}</span>
+                                </div>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+
         <div class="row">
             <div class="left sticky">
                 <nav class="filters" data-target="posts">
@@ -28,15 +50,18 @@
                                 <div class="cover thumbnail"
                                      style="background-image: url('{{owner.avatar_url}}')"></div>
                                 <div class="content">
-                                    <h3>{{full_name}}</h3>
-
-                                    <div class="meta">By {{owner.login}}
-                                        <time>{{dateFmt created_at}}</time>
-                                        <svg viewBox="0 0 14 16" width="14" height="16" aria-hidden="true">
+                                    <span class="star">
+                                        <svg class="star-icon" viewBox="0 0 14 16" width="14" height="16"
+                                             aria-hidden="true">
                                             <path fill-rule="evenodd"
-                                                  d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+                                                  d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z">
+                                            </path>
                                         </svg>
                                         {{stargazers_count}}
+                                    </span>
+                                    <h3>{{full_name}}</h3>
+                                    <div class="meta">
+                                        <span>{{description}}</span>
                                     </div>
                                 </div>
                             </a>

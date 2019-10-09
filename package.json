@@ -32,6 +32,7 @@
     "@octokit/rest": "^16.30.1",
     "@tryghost/admin-api": "^0.5.4",
     "@tryghost/content-api": "^1.2.9",
+    "emailjs": "^2.2.0",
     "hbs": "^4.0.4",
     "memory-cache": "^0.2.0",
     "moment": "^2.24.0",

@@ -1,17 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
   /**
-   * Search - DISABLED
-   */
-  // var inputs = document.querySelectorAll('.search');
-  //
-  // for (var i = 0; i < inputs.length; i++) {
-  //   new Search({
-  //     el: inputs[i],
-  //     url: inputs[i].getAttribute('rel')
-  //   });
-  // }
-
-  /**
    * Popup links
    */
   var popups = document.querySelectorAll('.popup');
@@ -177,14 +165,4 @@ $(function() {
       $(this).prev('.collapsible').removeClass('collapsed');
     });
   }
-
-  /**
-   * Hello geeks
-   */
-  var message = '';
-  message += 'Well hello there! Looks like we have some kind of nerd on our hands.' + '\n\n';
-  message += 'Stop staring at the console and go check out our open positions in Berlin and Shanghai:' + '\n';
-  message += 'https://wiredcraft.com/jobs/' + '\n\n';
-  message += 'Wanna get a job your mom would be proud of? Send us your resume at job@wiredcraft.com.' + '\n';
-  console.log(message);
 });
