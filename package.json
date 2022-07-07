@@ -35,7 +35,7 @@
     "emailjs": "^2.2.0",
     "hbs": "^4.0.4",
     "memory-cache": "^0.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.0",
     "rxjs": "6.5.2",
